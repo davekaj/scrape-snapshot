@@ -1,7 +1,7 @@
 const axios = require("axios");
 const fs = require("fs");
 
-async function getBalancer() {
+async function getProposals() {
   try {
     // This returns a JSON file from the snapshot hub, NOT an actual IPFS file stored on an IPFS node
     // It contains all proposals. Therefore we take the IPFS files from this list and query a public gateway
@@ -93,7 +93,7 @@ async function getVotes() {
 }
 
 async function scrapeSnapshot() {
-  await getBalancer();
+  await getProposals();
   await getVotes();
 }
 
